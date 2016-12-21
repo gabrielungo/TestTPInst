@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Technical Guide &#8212; BodePlotFilter 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User Guide" href="User Guide.html" />
+    <link rel="prev" title="Graphical User Interface (GUI)" href="GUI.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="technical-guide">
+<h1>Technical Guide<a class="headerlink" href="#technical-guide" title="Permalink to this headline">¶</a></h1>
+<p>There is one and only one main program called BodePlotFilter that is composed with a main programming structure that do the call for the particular libraries used and the functions.</p>
+<div class="section" id="composition">
+<h2>Composition<a class="headerlink" href="#composition" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>BodePlotFilter Code structure and partial description:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Libraries:</dt>
+<dd><ul class="first last">
+<li>Visa Library =&gt; this library managed the external instrumentation functionalities such as, recognition, read, write, etc.</li>
+<li>Time Library =&gt; this library give us access to certain function used. In particular we used Sleep to give time while visa communicate with peripherals.</li>
+<li>Tkinter Library =&gt; this library give us access to the GUI design and its different functionalities.</li>
+<li>Matplotlib Library =&gt; this library was used to do the graphical representation of Bode plot.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Functions:</dt>
+<dd><ul class="first last">
+<li>get_values =&gt; this functions collects all the information entered by the user in order of control the Function Generator.</li>
+<li>send_cmds =&gt; this is the principal function where everything happens. It is in charge of manipulating the GUI and the peripheral elements. It managed Read and Write functions, buttons and graphs&#8217; plots. Only Pause and Close buttons are managed apart.</li>
+<li>Pause =&gt; managed the button in charge of stopping the swept of frequencies used in Bode Plot.</li>
+<li>Close =&gt; simple executes quit of the program and closes the window.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Main program:</dt>
+<dd><ul class="first last">
+<li>Declaration/Initialization =&gt; this is where the generic variables are managed.</li>
+<li>Window composition =&gt; establishment of the titles, fonts and window parameters.</li>
+<li>GUI creation =&gt; structure of the window itself. How can we managed to manipulate the elements into the window.</li>
+<li>Window elements creation =&gt; creation of buttons, radio buttons, text labels, and graph plot areas.</li>
+<li>Window elements location =&gt; once elements are created we need to assign them around the window.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Technical Guide</a><ul>
+<li><a class="reference internal" href="#composition">Composition</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="GUI.html" title="previous chapter">Graphical User Interface (GUI)</a></li>
+      <li>Next: <a href="User Guide.html" title="next chapter">User Guide</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Technical Guide.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, ASSEM Badr/BARRIENTOS Gabriel.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/Technical Guide.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
